@@ -1,0 +1,844 @@
+-- // Rayfield Version of UltraCoolGUI (22 Buttons)
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "�Script Hub",
+    LoadingTitle = "Loading UltraCoolGUI...",
+    LoadingSubtitle = "by invisible_1l On discord!",
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = "UltraScriptHub",
+       FileName = "Settings"
+    }
+})
+
+local MainTab = Window:CreateTab("Main Scripts", 4483362458)
+
+Rayfield:Notify({
+   Title = "Ultra Script Hub",
+   Content = "Loaded successfully with all 22 scripts!",
+   Duration = 4.5
+})
+
+-- === BUTTONS ===
+MainTab:CreateButton({ Name = "Backdoor.exe", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/iK4oS/backdoor.exe/master/source.lua"))()
+end })
+
+MainTab:CreateButton({ Name = "NoClip", Callback = function()
+    local player = game.Players.LocalPlayer
+    local char = player.Character or player.CharacterAdded:Wait()
+    game:GetService("RunService").Stepped:Connect(function()
+        for _, part in ipairs(char:GetDescendants()) do
+            if part:IsA("BasePart") then
+                part.CanCollide = false
+            end
+        end
+    end)
+end })
+
+MainTab:CreateButton({ Name = "FE Sit", Callback = function()
+    game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = true
+end })
+
+MainTab:CreateButton({ Name = "Infinite Yield", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+end })
+
+MainTab:CreateButton({ Name = "LALOL Hub Scanner", Callback = function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-LALOL-Hub-Backdoor-Scanner-Without-the-Hint-52003"))()
+end })
+
+MainTab:CreateButton({ Name = "Super Speed", Callback = function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
+end })
+
+MainTab:CreateButton({ Name = "Super Ring (v5)", Callback = function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Super-ring-parts-v5-no-key-49990"))()
+end })
+
+MainTab:CreateButton({ Name = "c00lkidd Executor", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/rtlsmonk/c00lgui-made-by-rtls_a1-on-discord/refs/heads/main/have-fun"))()
+end })
+
+MainTab:CreateButton({ Name = "🌟Nameless Admin🌟", Callback = function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Nameless-admin-REWORKED-43502"))()
+end })
+
+
+MainTab:CreateButton({ Name = "Dex Explorer", Callback = function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Dex-plus-plus-46438"))()
+end })
+
+MainTab:CreateButton({ Name = "Server Admin [Press M]", Callback = function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Server-Admin-R6-47020"))()
+end })
+
+MainTab:CreateButton({ Name = "99 Nights in The Forest Script", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/nightsintheforest.lua",true))()
+end })
+
+MainTab:CreateButton({ Name = "Spinner Battles OP Farm", Callback = function()
+    local player = game.Players.LocalPlayer
+    local char = player.Character or player.CharacterAdded:Wait()
+    local hrp = char:WaitForChild("HumanoidRootPart")
+    local spinning = true
+    task.spawn(function()
+        while spinning and hrp.Parent do
+            hrp.CFrame = hrp.CFrame * CFrame.Angles(0, math.rad(999999999), 0)
+            task.wait(0.001)
+        end
+    end)
+    task.spawn(function()
+        while spinning do
+            for _, plr in ipairs(game.Players:GetPlayers()) do
+                if plr ~= player and plr.Character and plr.Character:FindFirstChild("HumanoidRootPart") then
+                    plr.Character.HumanoidRootPart.CFrame = hrp.CFrame * CFrame.new(0,0,3)
+                end
+            end
+            task.wait(0.01)
+        end
+    end)
+    task.delay(90,function() spinning=false end)
+end })
+
+MainTab:CreateButton({ Name = "Free Product OP", Callback = function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Untitled-Battlegrounds-Free-product-free-gamepass-READ-THE-DESCRIPTION-52699"))()
+end })
+
+MainTab:CreateButton({ Name = "OP Fling Tool", Callback = function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Classic-Sword-Fling-Tool-16842"))()
+end })
+
+MainTab:CreateButton({ Name = "Simple ESP GUI", Callback = function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-ChatGPT-esp-gay-44168"))()
+end })
+
+MainTab:CreateButton({ Name = "c00lclan v1", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/cfsmi2/c00lguiv1/refs/heads/main/Main.lua",true))()
+end })
+
+MainTab:CreateButton({ Name = "Free FE Emotes & Animation Packs", Callback = function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-AFEM-14048"))()
+end })
+
+MainTab:CreateButton({ Name = "FE Ball Roll [R6]", Callback = function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Universal-FE-Ball-Roll-37962"))()
+end })
+
+MainTab:CreateButton({ Name = "Close GUI", Callback = function()
+    Rayfield:Destroy()
+end })MainTab:CreateButton({
+    Name = "c00lkidd Executor",
+    Callback = function()
+        -- === Ghost Text / Rainbow Executor inside Rayfield ===
+        local Players = game:GetService("Players")
+        local player = Players.LocalPlayer
+        local RunService = game:GetService("RunService")
+
+        -- HSV helper
+        local function HSV(h,s,v)
+            return Color3.fromHSV(h/360,s,v)
+        end
+
+        -- Root GUI
+        local gui = Instance.new("ScreenGui")
+        gui.Name = "CoolkidExecutorGhostText"
+        gui.ResetOnSpawn = false
+        gui.Parent = player:WaitForChild("PlayerGui")
+
+        -- Main Frame
+        local frame = Instance.new("Frame", gui)
+        frame.Size = UDim2.new(0,450,0,300)
+        frame.Position = UDim2.new(0.5,-225,0.5,-150)
+        frame.BackgroundColor3 = Color3.fromRGB(20,20,20)
+        frame.BorderColor3 = Color3.fromRGB(100,0,0)
+        frame.BorderSizePixel = 2
+        Instance.new("UICorner", frame).CornerRadius = UDim.new(0,10)
+
+        -- Title Bar
+        local titleBar = Instance.new("Frame", frame)
+        titleBar.Size = UDim2.new(1,0,0,36)
+        titleBar.BackgroundColor3 = Color3.fromRGB(255,0,0)
+        Instance.new("UICorner", titleBar).CornerRadius = UDim.new(0,10)
+
+        local titleLabel = Instance.new("TextLabel", titleBar)
+        titleLabel.Size = UDim2.new(1,-50,1,0)
+        titleLabel.Position = UDim2.new(0,8,0,0)
+        titleLabel.BackgroundTransparency = 1
+        titleLabel.Font = Enum.Font.GothamBold
+        titleLabel.TextSize = 16
+        titleLabel.Text = "Executor Made by me"
+        titleLabel.TextColor3 = Color3.fromRGB(255,255,255)
+        titleLabel.TextXAlignment = Enum.TextXAlignment.Left
+        titleLabel.TextYAlignment = Enum.TextYAlignment.Center
+
+        -- Toggle Button
+        local toggleBtn = Instance.new("TextButton", titleBar)
+        toggleBtn.Size = UDim2.new(0,36,0,22)
+        toggleBtn.Position = UDim2.new(1,-44,0,7)
+        toggleBtn.Font = Enum.Font.GothamBold
+        toggleBtn.TextSize = 14
+        toggleBtn.Text = "-"
+        toggleBtn.TextColor3 = Color3.fromRGB(255,255,255)
+        toggleBtn.BackgroundColor3 = Color3.fromRGB(220,20,25)
+        Instance.new("UICorner", toggleBtn).CornerRadius = UDim.new(0,6)
+
+        -- Scrollable Editor
+        local scrollFrame = Instance.new("ScrollingFrame", frame)
+        scrollFrame.Size = UDim2.new(1,-20,1,-120)
+        scrollFrame.Position = UDim2.new(0,10,0,44)
+        scrollFrame.BackgroundTransparency = 1
+        scrollFrame.BorderSizePixel = 0
+        scrollFrame.CanvasSize = UDim2.new(0,0,0,0)
+        scrollFrame.ScrollBarThickness = 6
+
+        local textBox = Instance.new("TextBox", scrollFrame)
+        textBox.Size = UDim2.new(1,0,0,100)
+        textBox.Position = UDim2.new(0,0,0,0)
+        textBox.BackgroundTransparency = 0
+        textBox.BackgroundColor3 = Color3.fromRGB(18,18,18)
+        textBox.TextColor3 = Color3.fromRGB(255,255,255)
+        textBox.MultiLine = true
+        textBox.ClearTextOnFocus = false
+        textBox.TextWrapped = true
+        textBox.Font = Enum.Font.Code
+        textBox.TextSize = 14
+        textBox.TextXAlignment = Enum.TextXAlignment.Left
+        textBox.TextYAlignment = Enum.TextYAlignment.Top
+        textBox.Text = "" -- start empty
+
+        -- Ghost text label
+        local ghostLabel = Instance.new("TextLabel", scrollFrame)
+        ghostLabel.Size = UDim2.new(1,0,1,0)
+        ghostLabel.Position = UDim2.new(0,0,0,0)
+        ghostLabel.BackgroundTransparency = 1
+        ghostLabel.Text = "Paste your Lua Script or Loadstring here"
+        ghostLabel.TextColor3 = Color3.fromRGB(160,160,160)
+        ghostLabel.Font = Enum.Font.Code
+        ghostLabel.TextSize = 14
+        ghostLabel.TextXAlignment = Enum.TextXAlignment.Left
+        ghostLabel.TextYAlignment = Enum.TextYAlignment.Top
+        ghostLabel.ZIndex = 2
+
+        -- Update CanvasSize dynamically
+        local function updateCanvas()
+            textBox.Size = UDim2.new(1,0,0,math.max(textBox.TextBounds.Y + 10, scrollFrame.AbsoluteSize.Y))
+            scrollFrame.CanvasSize = UDim2.new(0,0,0,textBox.Size.Y.Offset)
+        end
+        textBox:GetPropertyChangedSignal("Text"):Connect(function()
+            updateCanvas()
+            ghostLabel.Visible = textBox.Text == ""
+        end)
+        textBox:GetPropertyChangedSignal("TextBounds"):Connect(updateCanvas)
+        updateCanvas()
+
+        -- Button Creator (fixed colors)
+        local function createButton(name,posX,color)
+            local btn = Instance.new("TextButton", frame)
+            btn.Size = UDim2.new(0,100,0,32)
+            btn.Position = UDim2.new(0,posX,1,-50)
+            btn.BackgroundColor3 = color
+            btn.Font = Enum.Font.GothamBold
+            btn.Text = name
+            btn.TextSize = 14
+            btn.TextColor3 = Color3.fromRGB(255,255,255)
+            Instance.new("UICorner", btn).CornerRadius = UDim.new(0,6)
+            return btn
+        end
+
+        local runBtn = createButton("Run",10,Color3.fromRGB(0,200,0))
+        local clearBtn = createButton("Clear",120,Color3.fromRGB(180,0,200))
+        local scanBtn = createButton("Backdoor",230,Color3.fromRGB(0,120,255))
+        local dexBtn = createButton("DEX",340,Color3.fromRGB(0,120,255))
+
+        -- Button Logic
+        runBtn.MouseButton1Click:Connect(function()
+            local code = textBox.Text
+            if not code:match("%S") then return end
+            local ok, err = pcall(function()
+                local f = loadstring(code)
+                if f then f() end
+            end)
+            if not ok then warn("Execution Error:", err) end
+        end)
+
+        clearBtn.MouseButton1Click:Connect(function()
+            textBox.Text = ""
+        end)
+
+        scanBtn.MouseButton1Click:Connect(function()
+            local ok, err = pcall(function()
+                loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-LALOL-Hub-Backdoor-Scanner-Without-the-Hint-52003"))()
+            end)
+            if not ok then warn("Backdoor Error:", err) end
+        end)
+
+        dexBtn.MouseButton1Click:Connect(function()
+            local ok, err = pcall(function()
+                local dexSource = game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua")
+                local dexFunc = loadstring(dexSource)
+                if dexFunc then dexFunc() end
+            end)
+            if not ok then warn("DEX Error:", err) end
+        end)
+
+        -- Flatten / Restore
+        local isFlattened = false
+        local dragInput, dragStart, startPos
+
+        toggleBtn.MouseButton1Click:Connect(function()
+            if not isFlattened then
+                frame.Size = UDim2.new(frame.Size.X.Scale, frame.Size.X.Offset,0,36)
+                scrollFrame.Visible = false
+                runBtn.Visible = false
+                clearBtn.Visible = false
+                scanBtn.Visible = false
+                dexBtn.Visible = false
+                toggleBtn.Text = "+"
+                toggleBtn.BackgroundColor3 = Color3.fromRGB(0,200,0)
+                isFlattened = true
+            else
+                frame.Size = UDim2.new(0,450,0,300)
+                scrollFrame.Visible = true
+                runBtn.Visible = true
+                clearBtn.Visible = true
+                scanBtn.Visible = true
+                dexBtn.Visible = true
+                toggleBtn.Text = "-"
+                toggleBtn.BackgroundColor3 = Color3.fromRGB(220,20,25)
+                isFlattened = false
+            end
+        end)
+
+        -- Drag only when flattened
+        titleBar.InputBegan:Connect(function(input)
+            if isFlattened and (input.UserInputType==Enum.UserInputType.MouseButton1 or input.UserInputType==Enum.UserInputType.Touch) then
+                dragInput = input
+                dragStart = input.Position
+                startPos = frame.Position
+                input.Changed:Connect(function()
+                    if input.UserInputState==Enum.UserInputState.End then
+                        dragInput = nil
+                    end
+                end)
+            end
+        end)
+
+        titleBar.InputChanged:Connect(function(input)
+            if isFlattened and input == dragInput then
+                local delta = input.Position - dragStart
+                frame.Position = UDim2.new(
+                    startPos.X.Scale,
+                    startPos.X.Offset + delta.X,
+                    startPos.Y.Scale,
+                    startPos.Y.Offset + delta.Y
+                )
+            end
+        end)
+
+        -- Rainbow Animation for Executor Background (exclude buttons)
+        local hue = 0
+        RunService.RenderStepped:Connect(function()
+            hue = (hue + 0.5) % 360
+            local color = HSV(hue,1,1)
+            frame.BackgroundColor3 = color
+            titleBar.BackgroundColor3 = color
+            textBox.BackgroundColor3 = color:lerp(Color3.fromRGB(18,18,18),0.3)
+        end)
+    end
+})
+
+-- Assuming you already have your Rayfield Window and MainTab
+MainTab:CreateButton({
+    Name = "Neon Console Executor",
+    Callback = function()
+        -- === Neon Cyber Mobile Bottom Console Executor v2 (Black Theme) ===
+        local Players = game:GetService("Players")
+        local player = Players.LocalPlayer
+        local TweenService = game:GetService("TweenService")
+        local RunService = game:GetService("RunService")
+
+        local FONT = Enum.Font.Code
+        local FONT_SIZE = 16
+        local GUI_HEIGHT = 180
+        local INPUT_HEIGHT = 36
+
+        -- Colors
+        local BG_COLOR = Color3.fromRGB(0,0,0)
+        local FRAME_COLOR = Color3.fromRGB(0,0,0)
+        local INPUT_BG = Color3.fromRGB(50,50,50)
+        local RUN_COLOR = Color3.fromRGB(0,255,180)
+        local HIDE_COLOR = Color3.fromRGB(255,0,100)
+        local SHOW_COLOR = Color3.fromRGB(0,200,255)
+        local FG_COLOR = Color3.fromRGB(220,220,255)
+        local PLACEHOLDER_COLOR = Color3.fromRGB(150,150,150)
+
+        -- Safe loadstring
+        local function tryLoadString(code)
+            if type(loadstring) == "function" then return loadstring(code)
+            elseif type(load) == "function" then
+                local ok, fnOrErr = pcall(function() return load(code) end)
+                if ok then return fnOrErr else return nil, fnOrErr end
+            end
+            return nil, "No loadstring/load available"
+        end
+
+        -- Neon button animation
+        local function addButtonNeon(button,color1,color2,duration)
+            local tweenInfo = TweenInfo.new(duration, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true)
+            local tween = TweenService:Create(button, tweenInfo, {BackgroundColor3=color2})
+            button.BackgroundColor3 = color1
+            tween:Play()
+        end
+
+        -- GUI
+        local screenGui = Instance.new("ScreenGui")
+        screenGui.Name = "NeonBottomConsole"
+        screenGui.ResetOnSpawn = false
+        screenGui.IgnoreGuiInset = true
+        screenGui.Parent = player:WaitForChild("PlayerGui")
+
+        -- Main frame
+        local frame = Instance.new("Frame")
+        frame.Size = UDim2.new(0.95,0,0,GUI_HEIGHT)
+        frame.Position = UDim2.new(0.025,0,1,-GUI_HEIGHT-10)
+        frame.BackgroundColor3 = FRAME_COLOR
+        frame.BorderSizePixel = 0
+        frame.ClipsDescendants = true
+        frame.Parent = screenGui
+        Instance.new("UICorner", frame).CornerRadius = UDim.new(0,12)
+
+        -- Output scroll frame
+        local outputScroll = Instance.new("ScrollingFrame")
+        outputScroll.Parent = frame
+        outputScroll.Size = UDim2.new(0.98,0,0.68,0)
+        outputScroll.Position = UDim2.new(0.01,0,0,5)
+        outputScroll.BackgroundTransparency = 0.9
+        outputScroll.BackgroundColor3 = BG_COLOR
+        outputScroll.ScrollBarThickness = 6
+        outputScroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
+
+        -- Store log entries
+        local logEntries = {}
+        local function log(text)
+            local entry = Instance.new("TextLabel")
+            entry.Parent = outputScroll
+            entry.Size = UDim2.new(1,0,0,FONT_SIZE+6)
+            entry.Position = UDim2.new(0,0,0,#logEntries*(FONT_SIZE+6))
+            entry.BackgroundTransparency = 1
+            entry.Font = FONT
+            entry.TextSize = FONT_SIZE
+            entry.TextColor3 = FG_COLOR
+            entry.TextXAlignment = Enum.TextXAlignment.Left
+            entry.TextYAlignment = Enum.TextYAlignment.Top
+            entry.TextWrapped = true
+            entry.Text = text
+            table.insert(logEntries, entry)
+
+            outputScroll.CanvasSize = UDim2.new(0,0,#logEntries*(FONT_SIZE+6))
+            outputScroll.CanvasPosition = Vector2.new(0, outputScroll.CanvasSize.Y.Offset)
+        end
+
+        -- Horizontal scroll wrapper for input
+        local scrollWrapper = Instance.new("ScrollingFrame")
+        scrollWrapper.Size = UDim2.new(0.6,0,0,INPUT_HEIGHT)
+        scrollWrapper.Position = UDim2.new(0.01,0,0.72,0)
+        scrollWrapper.BackgroundTransparency = 1
+        scrollWrapper.ScrollBarThickness = 6
+        scrollWrapper.HorizontalScrollBarInset = Enum.ScrollBarInset.Always
+        scrollWrapper.CanvasSize = UDim2.new(1,0,0,0)
+        scrollWrapper.AutomaticCanvasSize = Enum.AutomaticSize.X
+        scrollWrapper.Parent = frame
+
+        -- TextBox input with placeholder
+        local box = Instance.new("TextBox")
+        box.Parent = scrollWrapper
+        box.Size = UDim2.new(1,0,1,0)
+        box.Position = UDim2.new(0,0,0,0)
+        box.Font = FONT
+        box.TextSize = FONT_SIZE
+        box.TextColor3 = PLACEHOLDER_COLOR
+        box.Text = ">command line:"  -- placeholder text
+        box.BackgroundColor3 = INPUT_BG
+        box.ClearTextOnFocus = false
+        box.MultiLine = false
+        box.TextWrapped = false
+        box.TextXAlignment = Enum.TextXAlignment.Left
+        box.TextYAlignment = Enum.TextYAlignment.Center
+        Instance.new("UICorner", box).CornerRadius = UDim.new(0,6)
+
+        -- Placeholder behavior
+        box.Focused:Connect(function()
+            if box.Text == ">command line:" then
+                box.Text = ""
+                box.TextColor3 = FG_COLOR
+            end
+        end)
+        box.FocusLost:Connect(function()
+            if box.Text == "" then
+                box.Text = ">command line:"
+                box.TextColor3 = PLACEHOLDER_COLOR
+            end
+        end)
+
+        -- Run Button
+        local execBtn = Instance.new("TextButton")
+        execBtn.Parent = frame
+        execBtn.Size = UDim2.new(0.18,0,0,INPUT_HEIGHT)
+        execBtn.Position = UDim2.new(0.63,0,0.72,0)
+        execBtn.Text = "Run"
+        execBtn.Font = FONT
+        execBtn.TextSize = FONT_SIZE
+        execBtn.TextColor3 = Color3.new(1,1,1)
+        execBtn.BackgroundColor3 = RUN_COLOR
+        execBtn.BorderSizePixel = 0
+        addButtonNeon(execBtn, RUN_COLOR, Color3.fromRGB(0,150,120), 1.5)
+        Instance.new("UICorner", execBtn).CornerRadius = UDim.new(0,6)
+
+        -- Hide Button
+        local hideBtn = Instance.new("TextButton")
+        hideBtn.Parent = frame
+        hideBtn.Size = UDim2.new(0.18,0,0,INPUT_HEIGHT)
+        hideBtn.Position = UDim2.new(0.81,0,0.72,0)
+        hideBtn.Text = "Hide"
+        hideBtn.Font = FONT
+        hideBtn.TextSize = FONT_SIZE
+        hideBtn.TextColor3 = Color3.new(1,1,1)
+        hideBtn.BackgroundColor3 = HIDE_COLOR
+        hideBtn.BorderSizePixel = 0
+        addButtonNeon(hideBtn, HIDE_COLOR, Color3.fromRGB(150,0,80), 1.5)
+        Instance.new("UICorner", hideBtn).CornerRadius = UDim.new(0,6)
+
+        -- Show Button
+        local showBtn = Instance.new("TextButton")
+        showBtn.Parent = screenGui
+        showBtn.Size = UDim2.new(0.2,0,0,INPUT_HEIGHT)
+        showBtn.Position = UDim2.new(0.4,0,0.85,0)
+        showBtn.Text = "Show"
+        showBtn.Font = FONT
+        showBtn.TextSize = FONT_SIZE
+        showBtn.TextColor3 = Color3.new(1,1,1)
+        showBtn.BackgroundColor3 = SHOW_COLOR
+        showBtn.BorderSizePixel = 0
+        showBtn.Visible = false
+        addButtonNeon(showBtn, SHOW_COLOR, Color3.fromRGB(0,80,180), 1.5)
+        Instance.new("UICorner", showBtn).CornerRadius = UDim.new(0,6)
+
+        -- Draggable show button
+        local dragging, dragStart, startPos = false, nil, nil
+        showBtn.InputBegan:Connect(function(input)
+            if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+                dragging = true
+                dragStart = input.Position
+                startPos = showBtn.Position
+                input.Changed:Connect(function()
+                    if input.UserInputState == Enum.UserInputState.End then
+                        dragging = false
+                    end
+                end)
+            end
+        end)
+        showBtn.InputChanged:Connect(function(input)
+            if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+                local delta = input.Position - dragStart
+                showBtn.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+                                             startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+            end
+        end)
+
+        -- Run command function with /clear
+        local function runCommand(cmd)
+            if not cmd or cmd:match("^%s*$") then return end
+            if cmd:lower() == "/clear" then
+                for _, entry in ipairs(logEntries) do entry:Destroy() end
+                logEntries = {}
+                return
+            end
+            local fn, err = tryLoadString("return "..cmd)
+            if fn then
+                local ok,res = pcall(fn)
+                if ok and res ~= nil then log(tostring(res)) end
+            else
+                fn, err = tryLoadString(cmd)
+                if fn then
+                    local ok,res = pcall(fn)
+                    if not ok then log("Error: "..tostring(res)) end
+                else
+                    log("Error: "..tostring(err))
+                end
+            end
+            box.Text = ">command line:"
+            box.TextColor3 = PLACEHOLDER_COLOR
+        end
+
+        -- Override print
+        local oldPrint = print
+        print = function(...)
+            local args = {...}
+            local str = ""
+            for i,v in ipairs(args) do str = str .. tostring(v) .. "\t" end
+            log(str)
+            oldPrint(table.unpack(args))
+        end
+
+        -- Button connections
+        execBtn.MouseButton1Click:Connect(function()
+            if box.Text ~= ">command line:" then runCommand(box.Text) end
+        end)
+        box.FocusLost:Connect(function(enterPressed)
+            if enterPressed and box.Text ~= ">command line:" then runCommand(box.Text) end
+        end)
+        hideBtn.MouseButton1Click:Connect(function() frame.Visible=false showBtn.Visible=true end)
+        showBtn.MouseButton1Click:Connect(function() frame.Visible=true showBtn.Visible=false end)
+    end
+})
+MainTab:CreateButton({
+	Name = "Black Hole v2 [NOT Mine",
+	Callback = function()
+		loadstring(game:HttpGet("https://pastefy.app/PU6VWuJk/raw"))()
+	end,
+})
+
+MainTab:CreateButton({
+    Name = "Open Music GUI",
+    Callback = function()
+        -- Destroy old GUI safely
+        pcall(function()
+            game.CoreGui.MusicGui:Destroy()
+        end)
+
+        -- Create the GUI
+        local gui = Instance.new("ScreenGui")
+        gui.Name = "MusicGui"
+        gui.ResetOnSpawn = false
+        gui.Parent = game:GetService("CoreGui")
+
+        local frame = Instance.new("Frame")
+        frame.Size = UDim2.new(0, 320, 0, 200)
+        frame.Position = UDim2.new(0.5, -160, 0.5, -100)
+        frame.BackgroundColor3 = Color3.fromRGB(20, 0, 30)
+        frame.BorderSizePixel = 0
+        frame.Active = true
+        frame.Draggable = true
+        frame.Parent = gui
+
+        local corner = Instance.new("UICorner", frame)
+        corner.CornerRadius = UDim.new(0, 10)
+
+        local title = Instance.new("TextLabel")
+        title.Size = UDim2.new(1, 0, 0, 30)
+        title.BackgroundTransparency = 1
+        title.Text = "[by invisible_1l in discord] Music GUI"
+        title.TextColor3 = Color3.fromRGB(170, 0, 255)
+        title.Font = Enum.Font.GothamBold
+        title.TextSize = 20
+        title.Parent = frame
+
+        local textbox = Instance.new("TextBox")
+        textbox.Size = UDim2.new(0.9, 0, 0, 35)
+        textbox.Position = UDim2.new(0.05, 0, 0.35, 0)
+        textbox.BackgroundColor3 = Color3.fromRGB(35, 0, 55)
+        textbox.Text = ""
+        textbox.PlaceholderText = "Put any Roblox music ID here"
+        textbox.PlaceholderColor3 = Color3.fromRGB(150, 100, 200)
+        textbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+        textbox.Font = Enum.Font.Gotham
+        textbox.TextSize = 16
+        textbox.Parent = frame
+
+        local boxCorner = Instance.new("UICorner", textbox)
+        boxCorner.CornerRadius = UDim.new(0, 8)
+
+        local playButton = Instance.new("TextButton")
+        playButton.Size = UDim2.new(0.9, 0, 0, 35)
+        playButton.Position = UDim2.new(0.05, 0, 0.65, 0)
+        playButton.BackgroundColor3 = Color3.fromRGB(120, 0, 200)
+        playButton.Text = "🎼 Play"
+        playButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+        playButton.Font = Enum.Font.GothamBold
+        playButton.TextSize = 18
+        playButton.Parent = frame
+
+        local btnCorner = Instance.new("UICorner", playButton)
+        btnCorner.CornerRadius = UDim.new(0, 8)
+
+        local stopButton = Instance.new("TextButton")
+        stopButton.Size = UDim2.new(0.9, 0, 0, 35)
+        stopButton.Position = UDim2.new(0.05, 0, 0.82, 0)
+        stopButton.BackgroundColor3 = Color3.fromRGB(80, 0, 130)
+        stopButton.Text = "Stop"
+        stopButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+        stopButton.Font = Enum.Font.GothamBold
+        stopButton.TextSize = 18
+        stopButton.Parent = frame
+
+        local btnCorner2 = Instance.new("UICorner", stopButton)
+        btnCorner2.CornerRadius = UDim.new(0, 8)
+
+        local sound = Instance.new("Sound")
+        sound.Volume = 3
+        sound.Looped = false
+        sound.Parent = game:GetService("SoundService")
+
+        playButton.MouseButton1Click:Connect(function()
+            local id = textbox.Text
+            if tonumber(id) then
+                sound.SoundId = "rbxassetid://" .. id
+                sound:Play()
+            else
+                textbox.PlaceholderText = "⚠️ Invalid ID, try again!"
+                textbox.Text = ""
+            end
+        end)
+
+        stopButton.MouseButton1Click:Connect(function()
+            sound:Stop()
+        end)
+    end
+})
+
+MainTab:CreateButton({
+    Name = "Open Skybox/Decal GUI",
+    Callback = function()
+        local Players = game:GetService("Players")
+        local CoreGui = game:GetService("CoreGui")
+        local Lighting = game:GetService("Lighting")
+
+        -- Destroy old GUI safely
+        pcall(function() if CoreGui:FindFirstChild("SkyboxGui") then CoreGui.SkyboxGui:Destroy() end end)
+
+        -- Create GUI
+        local gui = Instance.new("ScreenGui")
+        gui.Name = "SkyboxGui"
+        gui.ResetOnSpawn = false
+        gui.Parent = CoreGui
+
+        local frame = Instance.new("Frame")
+        frame.Size = UDim2.new(0, 380, 0, 240) -- slightly bigger
+        frame.Position = UDim2.new(0.5, -190, 0.5, -120)
+        frame.BackgroundColor3 = Color3.fromRGB(10, 0, 0)
+        frame.BorderSizePixel = 0
+        frame.Active = true
+        frame.Draggable = true
+        frame.Parent = gui
+
+        local corner = Instance.new("UICorner", frame)
+        corner.CornerRadius = UDim.new(0, 10)
+
+        local title = Instance.new("TextLabel")
+        title.Size = UDim2.new(1, 0, 0, 30)
+        title.BackgroundTransparency = 1
+        title.Text = "[by invisible_1l on discord] Decal Changer"
+        title.TextColor3 = Color3.fromRGB(255, 0, 0)
+        title.Font = Enum.Font.GothamBold
+        title.TextSize = 20
+        title.Parent = frame
+
+        local textbox = Instance.new("TextBox")
+        textbox.Size = UDim2.new(0.9, 0, 0, 35)
+        textbox.Position = UDim2.new(0.05, 0, 0.3, 0)
+        textbox.BackgroundColor3 = Color3.fromRGB(30, 0, 0)
+        textbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+        textbox.Text = "" -- empty for ghost text
+        textbox.PlaceholderText = "Paste a Decal ID" -- updated ghost text
+        textbox.PlaceholderColor3 = Color3.fromRGB(200, 100, 100)
+        textbox.Font = Enum.Font.Gotham
+        textbox.TextSize = 16
+        textbox.Parent = frame
+
+        local txtCorner = Instance.new("UICorner", textbox)
+        txtCorner.CornerRadius = UDim.new(0, 8)
+
+        local applySky = Instance.new("TextButton")
+        applySky.Size = UDim2.new(0.9, 0, 0, 30)
+        applySky.Position = UDim2.new(0.05, 0, 0.55, 0)
+        applySky.BackgroundColor3 = Color3.fromRGB(80, 0, 0)
+        applySky.Text = "Skybox Changer"
+        applySky.TextColor3 = Color3.fromRGB(255, 255, 255)
+        applySky.Font = Enum.Font.GothamBold
+        applySky.TextSize = 16
+        applySky.Parent = frame
+        Instance.new("UICorner", applySky).CornerRadius = UDim.new(0, 8)
+
+        local applyWorld = Instance.new("TextButton")
+        applyWorld.Size = UDim2.new(0.9, 0, 0, 30)
+        applyWorld.Position = UDim2.new(0.05, 0, 0.7, 0)
+        applyWorld.BackgroundColor3 = Color3.fromRGB(120, 0, 0)
+        applyWorld.Text = "Decal Spam"
+        applyWorld.TextColor3 = Color3.fromRGB(255, 255, 255)
+        applyWorld.Font = Enum.Font.GothamBold
+        applyWorld.TextSize = 16
+        applyWorld.Parent = frame
+        Instance.new("UICorner", applyWorld).CornerRadius = UDim.new(0, 8)
+
+        local removeSky = Instance.new("TextButton")
+        removeSky.Size = UDim2.new(0.43, -5, 0, 30)
+        removeSky.Position = UDim2.new(0.05, 0, 0.85, 0)
+        removeSky.BackgroundColor3 = Color3.fromRGB(60, 0, 0)
+        removeSky.Text = "Remove Skybox"
+        removeSky.TextColor3 = Color3.fromRGB(255, 255, 255)
+        removeSky.Font = Enum.Font.Gotham
+        removeSky.TextSize = 14
+        removeSky.Parent = frame
+        Instance.new("UICorner", removeSky).CornerRadius = UDim.new(0, 8)
+
+        local removeWorld = Instance.new("TextButton")
+        removeWorld.Size = UDim2.new(0.43, -5, 0, 30)
+        removeWorld.Position = UDim2.new(0.52, 0, 0.85, 0)
+        removeWorld.BackgroundColor3 = Color3.fromRGB(60, 0, 0)
+        removeWorld.Text = "Remove Decals"
+        removeWorld.TextColor3 = Color3.fromRGB(255, 255, 255)
+        removeWorld.Font = Enum.Font.Gotham
+        removeWorld.TextSize = 14
+        removeWorld.Parent = frame
+        Instance.new("UICorner", removeWorld).CornerRadius = UDim.new(0, 8)
+
+        local sky
+
+        applySky.MouseButton1Click:Connect(function()
+            local id = textbox.Text
+            if tonumber(id) then
+                if sky then sky:Destroy() end
+                sky = Instance.new("Sky")
+                sky.SkyboxBk = "rbxassetid://"..id
+                sky.SkyboxDn = "rbxassetid://"..id
+                sky.SkyboxFt = "rbxassetid://"..id
+                sky.SkyboxLf = "rbxassetid://"..id
+                sky.SkyboxRt = "rbxassetid://"..id
+                sky.SkyboxUp = "rbxassetid://"..id
+                sky.Parent = Lighting
+            else
+                textbox.PlaceholderText = "Invalid ID!"
+            end
+        end)
+
+        applyWorld.MouseButton1Click:Connect(function()
+            local id = textbox.Text
+            if tonumber(id) then
+                for _, obj in ipairs(workspace:GetDescendants()) do
+                    if obj:IsA("Part") or obj:IsA("MeshPart") then
+                        local decal = Instance.new("Decal")
+                        decal.Texture = "rbxassetid://"..id
+                        decal.Face = Enum.NormalId.Front
+                        decal.Parent = obj
+                    end
+                end
+            end
+        end)
+
+        removeSky.MouseButton1Click:Connect(function()
+            for _, v in ipairs(Lighting:GetChildren()) do
+                if v:IsA("Sky") then v:Destroy() end
+            end
+        end)
+
+        removeWorld.MouseButton1Click:Connect(function()
+            for _, obj in ipairs(workspace:GetDescendants()) do
+                for _, d in ipairs(obj:GetChildren()) do
+                    if d:IsA("Decal") then d:Destroy() end
+                end
+            end
+        end)
+    end
+})
