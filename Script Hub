@@ -842,3 +842,5 @@ MainTab:CreateButton({
         end)
     end
 })
+
+MainTab:CreateButton({ Name = "Chattroll Script", Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/dhdyx625-code/UHM-privite-/refs/heads/main/Uhm"))()
