@@ -129,7 +129,7 @@ end })
 MainTab:CreateButton({ Name = "Close GUI", Callback = function()
     Rayfield:Destroy()
 end })MainTab:CreateButton({
-    Name = "c00lkidd Executor",
+    Name = "Random executor by Invisible_1l I Discord",
     Callback = function()
         -- === Ghost Text / Rainbow Executor inside Rayfield ===
         local Players = game:GetService("Players")
@@ -351,7 +351,7 @@ end })MainTab:CreateButton({
 
 -- Assuming you already have your Rayfield Window and MainTab
 MainTab:CreateButton({
-    Name = "Neon Console Executor",
+    Name = "Random executor",
     Callback = function()
         -- === Neon Cyber Mobile Bottom Console Executor v2 (Black Theme) ===
         local Players = game:GetService("Players")
