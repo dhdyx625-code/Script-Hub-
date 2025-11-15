@@ -860,3 +860,15 @@ MainTab:CreateButton({
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dhdyx625-code/Inventory-Viewer/refs/heads/main/Inventory%20Viewer"))()
 end,
 })
+MainTab:CreateButton({
+	Name = "Anti Kick",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Anti-Kick/refs/heads/main/Anti-Kick.lua"))()
+end,
+})
+MainTab:CreateButton({
+	Name = "Anti Bang",
+	Callback = function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Anti-Bang-48256"))()
+end,
+})
